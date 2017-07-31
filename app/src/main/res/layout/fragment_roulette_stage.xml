@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="studio.irisdesigns.roulettepredictor.RouletteStageFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/svContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Row 00 -->
+                <Button
+                    android:id="@+id/btn00"
+                    style="@style/primaryNumbers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_green_dark"
+                    android:text="00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Row 01 -->
+                <Button
+                    android:id="@+id/btn01"
+                    style="@style/primaryNumbers"
+                    android:text="01" />
+
+                <Button
+                    android:id="@+id/btn02"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="02" />
+
+                <Button
+                    android:id="@+id/btn03"
+                    style="@style/primaryNumbers"
+                    android:text="03" />
+
+            </LinearLayout>
+
+            <!-- Row 02 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn04"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="04" />
+
+                <Button
+                    android:id="@+id/btn05"
+                    style="@style/primaryNumbers"
+                    android:text="05" />
+
+                <Button
+                    android:id="@+id/btn06"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="06" />
+
+            </LinearLayout>
+
+            <!-- Row 03 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn07"
+                    style="@style/primaryNumbers"
+                    android:text="07" />
+
+                <Button
+                    android:id="@+id/btn08"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="08" />
+
+                <Button
+                    android:id="@+id/btn09"
+                    style="@style/primaryNumbers"
+                    android:text="09" />
+
+            </LinearLayout>
+
+            <!-- Row 04 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn10"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="10" />
+
+                <Button
+                    android:id="@+id/btn11"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="11" />
+
+                <Button
+                    android:id="@+id/btn12"
+                    style="@style/primaryNumbers"
+                    android:text="12" />
+
+            </LinearLayout>
+
+            <!-- Row 05 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn13"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="13" />
+
+                <Button
+                    android:id="@+id/btn14"
+                    style="@style/primaryNumbers"
+                    android:text="14" />
+
+                <Button
+                    android:id="@+id/btn15"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="15" />
+
+            </LinearLayout>
+
+            <!-- Row 06 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn16"
+                    style="@style/primaryNumbers"
+                    android:text="16" />
+
+                <Button
+                    android:id="@+id/btn17"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="17" />
+
+                <Button
+                    android:id="@+id/btn18"
+                    style="@style/primaryNumbers"
+                    android:text="18" />
+
+            </LinearLayout>
+
+            <!-- Row 07 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn19"
+                    style="@style/primaryNumbers"
+                    android:text="19" />
+
+                <Button
+                    android:id="@+id/btn20"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="20" />
+
+                <Button
+                    android:id="@+id/btn21"
+                    style="@style/primaryNumbers"
+                    android:text="21" />
+
+            </LinearLayout>
+
+            <!-- Row 08 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn22"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="22" />
+
+                <Button
+                    android:id="@+id/btn23"
+                    style="@style/primaryNumbers"
+                    android:text="23" />
+
+                <Button
+                    android:id="@+id/btn24"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="24" />
+
+            </LinearLayout>
+
+            <!-- Row 09 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn25"
+                    style="@style/primaryNumbers"
+                    android:text="25" />
+
+                <Button
+                    android:id="@+id/btn26"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="26" />
+
+                <Button
+                    android:id="@+id/btn27"
+                    style="@style/primaryNumbers"
+                    android:text="27" />
+
+            </LinearLayout>
+
+            <!-- Row 10 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn28"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="28" />
+
+                <Button
+                    android:id="@+id/btn29"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="29" />
+
+                <Button
+                    android:id="@+id/btn30"
+                    style="@style/primaryNumbers"
+                    android:text="30" />
+
+            </LinearLayout>
+
+            <!-- Row 11 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn31"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="31" />
+
+                <Button
+                    android:id="@+id/btn32"
+                    style="@style/primaryNumbers"
+                    android:text="32" />
+
+                <Button
+                    android:id="@+id/btn33"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="33" />
+
+            </LinearLayout>
+
+            <!-- Row 12 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn34"
+                    style="@style/primaryNumbers"
+                    android:text="34" />
+
+                <Button
+                    android:id="@+id/btn35"
+                    style="@style/primaryNumbers"
+                    android:background="@android:color/black"
+                    android:text="35" />
+
+                <Button
+                    android:id="@+id/btn36"
+                    style="@style/primaryNumbers"
+                    android:text="36" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/roulette_wheel"
+        app:backgroundTint="@android:color/holo_green_dark" />
+
+</android.support.design.widget.CoordinatorLayout>

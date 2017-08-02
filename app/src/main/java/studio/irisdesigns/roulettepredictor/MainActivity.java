@@ -15,16 +15,20 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
+    // private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private int spinCounter, currentWin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        /*
+         * Code for the UI starts
+         */
+        // toolbar = (Toolbar) findViewById(R.id.toolbar);
         // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -37,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setIcon(R.drawable.predict);
         tabLayout.getTabAt(2).setIcon(R.drawable.stats);
         tabLayout.getTabAt(3).setIcon(R.drawable.gear);
+        /*
+         * Code for the UI ends
+         */
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -48,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 

@@ -16,6 +16,7 @@ public class CalcPredict1 {
     int[][] not_in_37counts;
     // numTableForPD;
 
+
     private Prediction calcP1(Prediction a) {
         return null;
     }

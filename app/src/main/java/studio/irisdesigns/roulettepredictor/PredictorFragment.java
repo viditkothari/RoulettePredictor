@@ -1,11 +1,14 @@
 package studio.irisdesigns.roulettepredictor;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -53,10 +56,7 @@ public class PredictorFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        setUserVisibleHint(false);
     }
 
     @Override
@@ -65,4 +65,20 @@ public class PredictorFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_predictor, container, false);
     }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);/*
+
+        CalcPredict1 c=new CalcPredict1();
+        int randomVals[] = c.Random1();
+        ((TextView)view.findViewById(R.id.randomplaceholder1)).setText(String.valueOf(randomVals[0]));
+        ((TextView)view.findViewById(R.id.randomplaceholder2)).setText(String.valueOf(randomVals[1]));
+        ((TextView)view.findViewById(R.id.randomplaceholder3)).setText(String.valueOf(randomVals[2]));
+        ((TextView)view.findViewById(R.id.randomplaceholder4)).setText(String.valueOf(randomVals[3]));
+
+        // Create an array of 38 numbers (0-36) + 1 number to save the spinCount (which will work as a flag to see if user is coming to this screen with a new spin
+        savedInstanceState.putIntArray("randomArray",randomVals);*/
+    }
+    /*private AsyncTask<>*/
 }

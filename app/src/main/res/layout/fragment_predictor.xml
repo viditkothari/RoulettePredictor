@@ -1,581 +1,192 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- TODO: Update blank fragment layout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="studio.irisdesigns.roulettepredictor.PredictorFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <!-- Row 1: Predict Group A -->
+    <LinearLayout style="@style/predict_blocks_linear_Layout">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P1" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P2" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P3" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-        <!-- Sub_v1 -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-        <!-- Sub_v1 -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="P4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-        <!-- Sub_v1 -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP1"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP2"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP3"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="SP4"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P4" />
 
     </LinearLayout>
 
-</FrameLayout>
+    <LinearLayout style="@style/predict_blocks_linear_Layout">
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP2" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP2" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP4" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+    </LinearLayout>
+
+    <!-- Row 1: Predict Group B -->
+    <LinearLayout style="@style/predict_blocks_linear_Layout">
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P1" />
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P2" />
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P3" />
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P4" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/predict_blocks_linear_Layout">
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP2" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP2" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP4" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+    </LinearLayout>
+
+    <!-- Row 1: Predict Group C -->
+    <LinearLayout style="@style/predict_blocks_linear_Layout">
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P1" />
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P2" />
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P3" />
+
+        <TextView
+            style="@style/predict_blocks_primary"
+            android:text="P4" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/predict_blocks_linear_Layout">
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP2" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP2" />
+
+        <TextView
+            style="@style/predict_blocks_sub_a"
+            android:text="SP4" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+        <TextView
+            style="@style/predict_blocks_sub_b"
+            android:text="SP1" />
+
+    </LinearLayout>
+
+</LinearLayout>

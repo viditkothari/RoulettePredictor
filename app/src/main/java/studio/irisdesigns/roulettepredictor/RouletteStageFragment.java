@@ -20,47 +20,16 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class RouletteStageFragment extends Fragment implements View.OnClickListener {
-    /*// TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-*/
     private OnFragmentInteractionListener mListener;
 
     public RouletteStageFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * <p>
-     * param param1 Parameter 1.
-     * param param2 Parameter 2.
-     * return A new instance of fragment RouletteStageFragment.
-     * <p>
-     * // TODO: Rename and change types and number of parameters
-     * public static RouletteStageFragment newInstance(String param1, String param2) {
-     * RouletteStageFragment fragment = new RouletteStageFragment();
-     * Bundle args = new Bundle();
-     * args.putString(ARG_PARAM1, param1);
-     * args.putString(ARG_PARAM2, param2);
-     * fragment.setArguments(args);
-     * return fragment;
-     * }
-     */
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }*/
+        setUserVisibleHint(false);
     }
 
     @Override
@@ -120,41 +89,5 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         // getId for the v, cast it to Button type, get/extract its text, convert it to String, parse it into Integer type.
         mListener.updateInfo(Integer.parseInt(((Button) v.findViewById(v.getId())).getText().toString()));
-
-/*
-
-        @Override
-        public void onViewCreated (View view, @Nullable Bundle savedInstanceState){
-            super.onViewCreated(view, savedInstanceState);
-            view.findViewById(R.id.btn00).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.i("clicked!----", "Button 0");
-                }
-            });
-            view.findViewById(R.id.btn01).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.i("clicked!----", "Button 1");
-                }
-            });
-        }
-
-        Can be used in to faciliate Undo / UNDO / Un Do request
-        mListener.undo();
-
-        Log.i("parseInt ------", Integer.toString(v.getId()));
-        Log.i("Fragment Log: ", ((Button) v.findViewById(v.getId())).getText().toString());
-
-        switch (v.getId()) {
-            case R.id.btn00:
-                Log.i("parseInt ------", Integer.toString(v.getId()));
-                break;
-            case R.id.btn01:
-                Log.i("parseInt ------", Integer.toString(v.getId()));
-                break;
-        }
-*/
-
     }
 }

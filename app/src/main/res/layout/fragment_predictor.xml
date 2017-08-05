@@ -10,18 +10,22 @@
     <LinearLayout style="@style/predict_blocks_linear_Layout">
 
         <TextView
+            android:id="@+id/predict_A1"
             style="@style/predict_blocks_primary"
             android:text="P1" />
 
         <TextView
+            android:id="@+id/predict_A2"
             style="@style/predict_blocks_primary"
             android:text="P2" />
 
         <TextView
+            android:id="@+id/predict_A3"
             style="@style/predict_blocks_primary"
             android:text="P3" />
 
         <TextView
+            android:id="@+id/predict_A4"
             style="@style/predict_blocks_primary"
             android:text="P4" />
 
@@ -30,18 +34,22 @@
     <LinearLayout style="@style/predict_blocks_linear_Layout">
 
         <TextView
+            android:id="@+id/predict_lastloss_A1"
             style="@style/predict_blocks_sub_a"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_A2"
             style="@style/predict_blocks_sub_a"
             android:text="SP2" />
 
         <TextView
+            android:id="@+id/predict_lastloss_A3"
             style="@style/predict_blocks_sub_a"
             android:text="SP2" />
 
         <TextView
+            android:id="@+id/predict_lastloss_A4"
             style="@style/predict_blocks_sub_a"
             android:text="SP4" />
 
@@ -50,39 +58,47 @@
     <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_A1"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_A2"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_A3"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_A4"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
     </LinearLayout>
 
-    <!-- Row 1: Predict Group B -->
+    <!-- Row 2: Predict Group B -->
     <LinearLayout style="@style/predict_blocks_linear_Layout">
 
         <TextView
+            android:id="@+id/predict_B1"
             style="@style/predict_blocks_primary"
             android:text="P1" />
 
         <TextView
+            android:id="@+id/predict_B2"
             style="@style/predict_blocks_primary"
             android:text="P2" />
 
         <TextView
+            android:id="@+id/predict_B3"
             style="@style/predict_blocks_primary"
             android:text="P3" />
 
         <TextView
+            android:id="@+id/predict_B4"
             style="@style/predict_blocks_primary"
             android:text="P4" />
 
@@ -91,18 +107,22 @@
     <LinearLayout style="@style/predict_blocks_linear_Layout">
 
         <TextView
+            android:id="@+id/predict_lastloss_B1"
             style="@style/predict_blocks_sub_a"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_B2"
             style="@style/predict_blocks_sub_a"
             android:text="SP2" />
 
         <TextView
+            android:id="@+id/predict_lastloss_B3"
             style="@style/predict_blocks_sub_a"
             android:text="SP2" />
 
         <TextView
+            android:id="@+id/predict_lastloss_B4"
             style="@style/predict_blocks_sub_a"
             android:text="SP4" />
 
@@ -111,39 +131,47 @@
     <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_B1"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_B2"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_B3"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_B4"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
     </LinearLayout>
 
-    <!-- Row 1: Predict Group C -->
+    <!-- Row 3: Predict Group C -->
     <LinearLayout style="@style/predict_blocks_linear_Layout">
 
         <TextView
+            android:id="@+id/predict_C1"
             style="@style/predict_blocks_primary"
             android:text="P1" />
 
         <TextView
+            android:id="@+id/predict_C2"
             style="@style/predict_blocks_primary"
             android:text="P2" />
 
         <TextView
+            android:id="@+id/predict_C3"
             style="@style/predict_blocks_primary"
             android:text="P3" />
 
         <TextView
+            android:id="@+id/predict_C4"
             style="@style/predict_blocks_primary"
             android:text="P4" />
 
@@ -152,18 +180,22 @@
     <LinearLayout style="@style/predict_blocks_linear_Layout">
 
         <TextView
+            android:id="@+id/predict_lastloss_C1"
             style="@style/predict_blocks_sub_a"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_C2"
             style="@style/predict_blocks_sub_a"
             android:text="SP2" />
 
         <TextView
+            android:id="@+id/predict_lastloss_C3"
             style="@style/predict_blocks_sub_a"
             android:text="SP2" />
 
         <TextView
+            android:id="@+id/predict_lastloss_C4"
             style="@style/predict_blocks_sub_a"
             android:text="SP4" />
 
@@ -172,18 +204,22 @@
     <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_C1"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_C2"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_C3"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 
         <TextView
+            android:id="@+id/predict_lastloss_percent_C4"
             style="@style/predict_blocks_sub_b"
             android:text="SP1" />
 

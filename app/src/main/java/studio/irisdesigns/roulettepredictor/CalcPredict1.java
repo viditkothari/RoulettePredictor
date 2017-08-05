@@ -12,7 +12,15 @@ import studio.irisdesigns.roulettepredictor.utility.Node;
 
 public class CalcPredict1 {
     int spinCounter;
-    int[][] currentWinningNum;
+
+    public int getSpinCounter() {
+        return spinCounter;
+    }
+
+    public void setSpinCounter(int spinCounter) {
+        this.spinCounter = spinCounter;
+    }
+    /*   int[][] currentWinningNum;
     int[] winningHistory;
     int[][] classNum_primaryNum;
     int[][] primaryNum_classNum;
@@ -27,8 +35,8 @@ public class CalcPredict1 {
         c.createCircularList();
         ArrayList<Node> cL = c.getCircularCounter();
         Node currentNode = cL.get(0);
-        /*currentNode = currentNode.getLinkPrev();
-        currentNode = currentNode.getLinkNext();*/
+        *//*currentNode = currentNode.getLinkPrev();
+        currentNode = currentNode.getLinkNext();*//*
         return null;
     }
 
@@ -44,22 +52,6 @@ public class CalcPredict1 {
         return null;
     }
 
-    int[] Random1() {
-        int randomNum[] = {-1, -1, -1, -1};
-        randomNum[0] = (new Random()).nextInt(37);
+*/
 
-        do {
-            randomNum[1] = (new Random()).nextInt(37);
-        } while (randomNum[1] == randomNum[0]);
-
-        do {
-            randomNum[2] = (new Random()).nextInt(37);
-        } while (randomNum[2] == randomNum[0] || randomNum[2] == randomNum[1]);
-
-        do {
-            randomNum[3] = (new Random()).nextInt(37);
-        }
-        while (randomNum[3] == randomNum[0] || randomNum[3] == randomNum[1] || randomNum[3] == randomNum[2]);
-        return randomNum;
-    }
 }

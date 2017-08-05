@@ -1,5 +1,7 @@
 package studio.irisdesigns.roulettepredictor;
 
+import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +10,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Surface;
+import android.view.WindowManager;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EventBus.getDefault().register(this);
+
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
@@ -40,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         tabLayout.setSelectedTabIndicatorHeight(16);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -60,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
         });
     }
 
+    @Subscribe
+    public void onEvents(CalcPredict1 cp) {
+        spinCounter++
+        Log.d("EVENT LOGGED: ", "I got the tap! ;)" +);
+    }
+
     @Override
     public void updateInfo(int a) {
         spinCounter++;
@@ -74,11 +90,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
             sb.append(i);
             sb.append("\n");
         }
-
+        PredictorFragment predictorFragment = getFragmentManager().findFragmentById(R.id.)
+        initilizeValues(spinCounter);
         Log.i("Updated array list", sb.toString());
     }
 
     // Provisioned Undo function in case client needs it in future.
+    /*
     @Override
     public void undo() {
         // Removing the last winning number from the WinHistory ArrayList<Integer>
@@ -91,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
 
         Log.i("WinHistory & spinCount:", String.valueOf(WinHistory.size()) + " & " + spinCounter);
     }
+    */
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -131,4 +150,5 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
             return null;
         }
     }
+
 }

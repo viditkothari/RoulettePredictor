@@ -1,35 +1,29 @@
 package studio.irisdesigns.roulettepredictor;
 
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.Random;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PredictorFragment.OnFragmentInteractionListener} interface
+ * {@link PredictorFragment OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link PredictorFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class PredictorFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     // private OnFragmentInteractionListener mListener;
+    private static int spinCounter = -1;
 
     public PredictorFragment() {
         // Required empty public constructor
@@ -46,10 +40,10 @@ public class PredictorFragment extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static PredictorFragment newInstance(String param1, String param2) {
         PredictorFragment fragment = new PredictorFragment();
-        Bundle args = new Bundle();
+        /*Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        fragment.setArguments(args);*/
         return fragment;
     }
 
@@ -63,7 +57,10 @@ public class PredictorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_predictor, container, false);
+        View toInflate = inflater.inflate(R.layout.fragment_predictor, container, false);
+        Log.i("Testing a view: ~", ((TextView) toInflate.findViewById(R.id.predict_A1)).getText().toString());
+        ((TextView) toInflate.findViewById(R.id.predict_A1)).setText("sdsd");
+        return toInflate;
     }
 
     @Override
@@ -80,5 +77,45 @@ public class PredictorFragment extends Fragment {
         // Create an array of 38 numbers (0-36) + 1 number to save the spinCount (which will work as a flag to see if user is coming to this screen with a new spin
         savedInstanceState.putIntArray("randomArray",randomVals);*/
     }
-    /*private AsyncTask<>*/
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    public void initilizeValues(int spinCounter) {
+        PredictorFragment.spinCounter = spinCounter;
+    }
+
+    private class PredictionValues extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urls) {
+            return "0";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+
+        }
+
+        int[] Random1() {
+            int randomNum[] = {-1, -1, -1, -1};
+            randomNum[0] = (new Random()).nextInt(37);
+
+            do {
+                randomNum[1] = (new Random()).nextInt(37);
+            } while (randomNum[1] == randomNum[0]);
+
+            do {
+                randomNum[2] = (new Random()).nextInt(37);
+            } while (randomNum[2] == randomNum[0] || randomNum[2] == randomNum[1]);
+
+            do {
+                randomNum[3] = (new Random()).nextInt(37);
+            }
+            while (randomNum[3] == randomNum[0] || randomNum[3] == randomNum[1] || randomNum[3] == randomNum[2]);
+            return randomNum;
+        }
+    }
 }

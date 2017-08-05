@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import org.greenrobot.eventbus.EventBus;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +22,7 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class RouletteStageFragment extends Fragment implements View.OnClickListener {
-    private OnFragmentInteractionListener mListener;
+    // private OnFragmentInteractionListener mListener;
 
     public RouletteStageFragment() {
         // Required empty public constructor
@@ -30,7 +32,8 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setUserVisibleHint(false);
-    }
+        Log.i("OnCreate: ", "RouletteStage Fragment");
+    }/*
 
     @Override
     public void onAttach(Context context) {
@@ -40,7 +43,7 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + ", OnFragmentInteractionListener missing!");
         }
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -82,12 +85,35 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
         (inflatedUI.findViewById(R.id.btn34)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn35)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn36)).setOnClickListener(this);
+        Log.i("OnCreateView: ", "RouletteStage Fragment");
         return inflatedUI;
     }
 
     @Override
     public void onClick(View v) {
         // getId for the v, cast it to Button type, get/extract its text, convert it to String, parse it into Integer type.
-        mListener.updateInfo(Integer.parseInt(((Button) v.findViewById(v.getId())).getText().toString()));
+        int temp = Integer.parseInt(((Button) v.findViewById(v.getId())).getText().toString());
+        CalcPredict1 cp = new CalcPredict1();
+        cp.setWinningNumber(temp);
+        EventBus.getDefault().post(cp);
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i("OnResume: ", "RouletteStage Fragment");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.i("OnStart: ", "RouletteStage Fragment");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.i("OnDestroy: ", "RouletteStage Fragment");
+    }
+
 }

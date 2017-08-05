@@ -2,6 +2,7 @@ package studio.irisdesigns.roulettepredictor;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,12 +36,32 @@ public class StatisticsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setUserVisibleHint(false);
+        Log.i("OnCreate: ", "Statistics Fragment");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.i("OnCreateView: ", "Statistics Fragment");
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_statistics, container, false);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i("OnResume: ", "Statistics Fragment");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.i("OnStart: ", "Statistics Fragment");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.i("OnDestroy: ", "Statistics Fragment");
     }
 }

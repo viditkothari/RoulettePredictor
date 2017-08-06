@@ -1,10 +1,7 @@
 package studio.irisdesigns.roulettepredictor;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,38 +9,16 @@ import android.widget.Button;
 
 import org.greenrobot.eventbus.EventBus;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link RouletteStageFragment -> newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RouletteStageFragment extends Fragment implements View.OnClickListener {
-    // private OnFragmentInteractionListener mListener;
 
     public RouletteStageFragment() {
-        // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setUserVisibleHint(false);
-        Log.i("OnCreate: ", "RouletteStage Fragment");
-    }/*
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            mListener = (OnFragmentInteractionListener) context;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + ", OnFragmentInteractionListener missing!");
-        }
-    }*/
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -85,7 +60,6 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
         (inflatedUI.findViewById(R.id.btn34)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn35)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn36)).setOnClickListener(this);
-        Log.i("OnCreateView: ", "RouletteStage Fragment");
         return inflatedUI;
     }
 
@@ -96,25 +70,6 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
         CalcPredict1 cp = new CalcPredict1();
         cp.setWinningNumber(temp);
         EventBus.getDefault().post(cp);
-        // Log.i("Clicked! ", "button " + temp + " & :" + cp.toString());
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        // Log.i("OnResume: ", "RouletteStage Fragment");
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Log.i("OnStart: ", "RouletteStage Fragment");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        // Log.i("OnDestroy: ", "RouletteStage Fragment");
     }
 
 }

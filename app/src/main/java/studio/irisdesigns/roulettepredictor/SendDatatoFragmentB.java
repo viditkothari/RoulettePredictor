@@ -3,6 +3,7 @@ package studio.irisdesigns.roulettepredictor;
 
 public class SendDatatoFragmentB {
 
+    private int spinCounter;
     private int[] groupPA1 = new int[4];
     private int[] groupR1 = new int[4];
     private int[] groupPB1 = new int[4];
@@ -53,7 +54,11 @@ public class SendDatatoFragmentB {
         return groupPB3;
     }
 
-    public void setData(int[] groupPA1, int[] groupR1, int[] groupPB1, int[][] groupPA2, int[][] groupR2, int[][] groupPB2, double[] groupPA3, double[] groupR3, double[] groupPB3) {
+    public int getCount() {
+        return spinCounter;
+    }
+
+    public void setData(int[] groupPA1, int[] groupR1, int[] groupPB1, int[][] groupPA2, int[][] groupR2, int[][] groupPB2, double[] groupPA3, double[] groupR3, double[] groupPB3, int spinCounter) {
         this.groupPA1 = groupPA1;
         this.groupR1 = groupR1;
         this.groupPB1 = groupPB1;
@@ -63,5 +68,6 @@ public class SendDatatoFragmentB {
         this.groupPA3 = groupPA3;
         this.groupR3 = groupR3;
         this.groupPB3 = groupPB3;
+        this.spinCounter = spinCounter;
     }
 }

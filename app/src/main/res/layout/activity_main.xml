@@ -29,7 +29,7 @@
                 android:gravity="right"
                 android:paddingEnd="16dp"
                 android:paddingStart="16dp"
-                android:text="Spin # 231   ·   Current Win # 36" />
+                android:text="Spin # 00   ·   Current Win # 00" />
 
         </android.support.v7.widget.Toolbar>
 

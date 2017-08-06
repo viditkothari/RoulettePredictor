@@ -8,8 +8,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -53,10 +55,6 @@ public class MainActivity extends AppCompatActivity {
     private static double[] groupR3 = new double[4];
     private static double[] groupPB3 = new double[4];
 
-    int[] groupPA2Array = new int[8];
-    int[] groupR2Array = new int[8];
-    int[] groupPB2Array = new int[8];
-
     // private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -65,22 +63,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        for (int k = 0; k < 4; k++) {
-            groupPA1[k] = 0;
-            groupR1[k] = 0;
-            groupPB1[k] = 0;
-            groupPA3[k] = 0.0;
-            groupR3[k] = 0.0;
-            groupPB3[k] = 0.0;
-            groupPA2Array[k] = 0;
-            groupPA2Array[k + 4] = 0;
-            for (int l = 0; l < 2; l++) {
-                groupPA2[k][l] = 0;
-                groupR2[k][l] = 0;
-                groupPB2[k][l] = 0;
-            }
-        }
 
         EventBus.getDefault().register(this);
 
@@ -100,6 +82,78 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setSelectedTabIndicatorHeight(16);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // action with ID action_undo was selected
+            case R.id.action_undo:
+                undo();
+                Toast.makeText(this, "Undo committed", Toast.LENGTH_SHORT).show();
+
+                break;
+            // action with ID action_reset was selected
+            case R.id.action_reset:
+                reset();
+                Toast.makeText(this, "Reset committed!", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+        return true;
+    }
+
+    public void undo() {
+        CalcPredict1 cp = new CalcPredict1();
+        cp.setSpinCounter(--spinCounter);
+        currentLoopCounter = currentLoopCounter.getLinkPrev();
+        currentLoopCounterPA = currentLoopCounterPA.getLinkPrev();
+
+        currentWinningNumber = loopCounter_PB_PC.get(currentLoopCounter.getData()).getData();
+        DecimalFormat df = new DecimalFormat("00.##");
+        String status = "Spin #: " + df.format(spinCounter) + " · Current Win #: " + df.format(currentWinningNumber);
+        ((TextView) findViewById(R.id.info)).setText(status);
+
+        new PredictionValues().execute();
+    }
+
+    public void reset() {
+
+        spinCounter = 0;
+        currentWinningNumber = 0;
+        currentLoopCounterPA = loopCounter.get(0);
+        currentLoopCounterPA = loopCounter.get(16);
+        loopCounter_PB_PC.get(currentLoopCounter.getData()).setData(0);
+        CalcPredict1 cp = new CalcPredict1();
+        cp.setSpinCounter(spinCounter);
+        cp.setWinningNumber(currentWinningNumber);
+        for (int k = 0; k < 4; k++) {
+            groupPA1[k] = 0;
+            groupR1[k] = 0;
+            groupPB1[k] = 0;
+            groupPA3[k] = 0.0;
+            groupR3[k] = 0.0;
+            groupPB3[k] = 0.0;
+            for (int l = 0; l < 2; l++) {
+                groupPA2[k][l] = 0;
+                groupR2[k][l] = 0;
+                groupPB2[k][l] = 0;
+            }
+        }
+        loopCounter_PB_PC.get(currentLoopCounter.getData()).setData(0);
+        DecimalFormat df = new DecimalFormat("00.##");
+        String status = "Spin #: " + df.format(spinCounter) + " · Current Win #: " + df.format(currentWinningNumber);
+        ((TextView) findViewById(R.id.info)).setText(status);
+
+        new PredictionValues().execute();
+    }
+
     @Subscribe
     public void onEvent(CalcPredict1 cp) {
         spinCounter = cp.getSpinCounter();
@@ -115,8 +169,11 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new RouletteStageFragment(), "Stage");
         adapter.addFragment(new PredictorFragment(), "Predict");
-        adapter.addFragment(new StatisticsFragment(), "Stats");
-        adapter.addFragment(new MethodologyFragment(), "Method");
+        /**
+         TODO: To be added in later version
+         * adapter.addFragment(new StatisticsFragment(), "Stats");
+         * adapter.addFragment(new MethodologyFragment(), "Method");
+         **/
         viewPager.setAdapter(adapter);
     }
 
@@ -205,33 +262,6 @@ public class MainActivity extends AppCompatActivity {
             groupPB3[1] = (double) groupPB2[1][0] / (double) spinCounter;
             groupPB3[2] = (double) groupPB2[2][0] / (double) spinCounter;
             groupPB3[3] = (double) groupPB2[3][0] / (double) spinCounter;
-
-            groupPA2Array[0] = groupPA2[0][0];
-            groupPA2Array[1] = groupPA2[0][1];
-            groupPA2Array[2] = groupPA2[1][0];
-            groupPA2Array[3] = groupPA2[1][1];
-            groupPA2Array[4] = groupPA2[2][0];
-            groupPA2Array[5] = groupPA2[2][1];
-            groupPA2Array[6] = groupPA2[3][0];
-            groupPA2Array[7] = groupPA2[3][1];
-
-            groupR2Array[0] = groupR2[0][0];
-            groupR2Array[1] = groupR2[0][1];
-            groupR2Array[2] = groupR2[1][0];
-            groupR2Array[3] = groupR2[1][1];
-            groupR2Array[4] = groupR2[2][0];
-            groupR2Array[5] = groupR2[2][1];
-            groupR2Array[6] = groupR2[3][0];
-            groupR2Array[7] = groupR2[3][1];
-
-            groupPB2Array[0] = groupPB2[0][0];
-            groupPB2Array[1] = groupPB2[0][1];
-            groupPB2Array[2] = groupPB2[1][0];
-            groupPB2Array[3] = groupPB2[1][1];
-            groupPB2Array[4] = groupPB2[2][0];
-            groupPB2Array[5] = groupPB2[2][1];
-            groupPB2Array[6] = groupPB2[3][0];
-            groupPB2Array[7] = groupPB2[3][1];
             return 0;
         }
 
@@ -275,6 +305,7 @@ public class MainActivity extends AppCompatActivity {
             while (predict1[3] == predict1[0] || predict1[3] == predict1[1] || predict1[3] == predict1[2]);
             return predict1;
         }
+
 
         int[] PredictGroup2() {
             predict2[0] = currentLoopCounterPA.getData();

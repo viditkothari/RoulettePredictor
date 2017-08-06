@@ -96,24 +96,25 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
         CalcPredict1 cp = new CalcPredict1();
         cp.setWinningNumber(temp);
         EventBus.getDefault().post(cp);
+        // Log.i("Clicked! ", "button " + temp + " & :" + cp.toString());
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.i("OnResume: ", "RouletteStage Fragment");
+        // Log.i("OnResume: ", "RouletteStage Fragment");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.i("OnStart: ", "RouletteStage Fragment");
+        // Log.i("OnStart: ", "RouletteStage Fragment");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.i("OnDestroy: ", "RouletteStage Fragment");
+        // Log.i("OnDestroy: ", "RouletteStage Fragment");
     }
 
 }

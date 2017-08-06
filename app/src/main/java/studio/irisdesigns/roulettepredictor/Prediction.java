@@ -1,9 +1,5 @@
 package studio.irisdesigns.roulettepredictor;
 
-/**
- * Created by viditkothari on 8/2/2017.
- */
-
 public class Prediction {
     private int[] groupPA1 = new int[4];
     private int[] groupR1 = new int[4];
@@ -98,26 +94,4 @@ public class Prediction {
     public void setGroupPB3(double[] groupPB3) {
         this.groupPB3 = groupPB3;
     }
-
-    /*private int value;
-    private float winPercent;
-    private int lastWin;
-
-    public void setValues(int value, float winPercent, int lastWin) {
-        this.value = value;
-        this.winPercent = winPercent;
-        this.lastWin = lastWin;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public float getWinPercent() {
-        return winPercent;
-    }
-
-    public int getLastWin() {
-        return lastWin;
-    }*/
 }

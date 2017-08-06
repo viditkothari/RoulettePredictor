@@ -2,14 +2,10 @@ package studio.irisdesigns.roulettepredictor.utility;
 
 import java.util.ArrayList;
 
-/**
- * Created by viditkothari on 8/4/2017.
- */
-
 public class CircularCounter {
-    private static ArrayList<Node> circularCounter = new ArrayList<>();
+    private ArrayList<Node> circularCounter = new ArrayList<>();
 
-    public void createCircularList() {
+    void createCircularList() {
 
         for (int i = 0; i < 37; i++) {
             circularCounter.add(new Node());
@@ -32,6 +28,7 @@ public class CircularCounter {
     }
 
     public ArrayList<Node> getCircularCounter() {
+        createCircularList();
         return circularCounter;
     }
 }

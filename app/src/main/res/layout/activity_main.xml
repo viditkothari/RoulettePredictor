@@ -13,23 +13,25 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <!-- android:layout_height="?attr/actionBarSize" -->
+        <!--
+        android:layout_height="?attr/actionBarSize"
+        app:layout_scrollFlags="scroll|enterAlways"
+        -->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             <TextView
                 android:id="@+id/info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:gravity="right"
+                android:layout_gravity="end|right"
+                android:gravity="end|right"
                 android:paddingEnd="16dp"
                 android:paddingStart="16dp"
-                android:text="Spin # 00   ·   Current Win # 00" />
+                android:text="@string/spin_status" />
 
         </android.support.v7.widget.Toolbar>
 

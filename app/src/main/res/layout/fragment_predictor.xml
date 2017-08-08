@@ -55,7 +55,9 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
+    <LinearLayout
+        style="@style/predict_blocks_linear_Layout_sub_b"
+        android:visibility="invisible">
 
         <TextView
             android:id="@+id/predict_lastloss_percent_A1"
@@ -128,7 +130,9 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
+    <LinearLayout
+        style="@style/predict_blocks_linear_Layout_sub_b"
+        android:visibility="invisible">
 
         <TextView
             android:id="@+id/predict_lastloss_percent_B1"
@@ -201,7 +205,9 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/predict_blocks_linear_Layout_sub_b">
+    <LinearLayout
+        style="@style/predict_blocks_linear_Layout_sub_b"
+        android:visibility="invisible">
 
         <TextView
             android:id="@+id/predict_lastloss_percent_C1"

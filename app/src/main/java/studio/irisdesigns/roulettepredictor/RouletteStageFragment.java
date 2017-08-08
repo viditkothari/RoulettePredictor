@@ -57,6 +57,7 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
         (inflatedUI.findViewById(R.id.btn30)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn31)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn32)).setOnClickListener(this);
+        (inflatedUI.findViewById(R.id.btn33)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn34)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn35)).setOnClickListener(this);
         (inflatedUI.findViewById(R.id.btn36)).setOnClickListener(this);
@@ -69,6 +70,7 @@ public class RouletteStageFragment extends Fragment implements View.OnClickListe
         int temp = Integer.parseInt(((Button) v.findViewById(v.getId())).getText().toString());
         CalcPredict1 cp = new CalcPredict1();
         cp.setWinningNumber(temp);
+        cp.addSpinCounter();
         EventBus.getDefault().post(cp);
     }
 

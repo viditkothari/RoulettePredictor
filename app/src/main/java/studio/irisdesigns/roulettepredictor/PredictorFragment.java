@@ -85,6 +85,9 @@ public class PredictorFragment extends Fragment {
 
     @Subscribe
     public void onEvent(SendDatatoFragmentB sd) {
+        DecimalFormat df = new DecimalFormat("0.00");
+        StringBuilder sbldr = new StringBuilder(" ");
+
         groupPA1 = sd.getGroupPA1();
         groupR1 = sd.getGroupR1();
         groupPB1 = sd.getGroupPB1();
@@ -97,14 +100,23 @@ public class PredictorFragment extends Fragment {
         groupR3 = sd.getGroupR3();
         groupPB3 = sd.getGroupPB3();
 
+        /*
+        Prediction A
+        */
+
+        // Prediction A - Row 1
         ((TextView) this.toInflate.findViewById(predict_A1)).setText(String.valueOf(groupPA1[0]));
         ((TextView) this.toInflate.findViewById(predict_A2)).setText(String.valueOf(groupPA1[1]));
         ((TextView) this.toInflate.findViewById(predict_A3)).setText(String.valueOf(groupPA1[2]));
         ((TextView) this.toInflate.findViewById(predict_A4)).setText(String.valueOf(groupPA1[3]));
 
-        DecimalFormat df = new DecimalFormat("0.00");
-        StringBuilder sbldr = new StringBuilder(" ");
+        // Prediction A - Row 2
+        ((TextView) this.toInflate.findViewById(predict_lastloss_A1)).setText(String.valueOf(groupPA2[0][0]) + " · " + groupPA2[0][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_A2)).setText(String.valueOf(groupPA2[1][0]) + " · " + groupPA2[1][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_A3)).setText(String.valueOf(groupPA2[2][0]) + " · " + groupPA2[2][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_A4)).setText(String.valueOf(groupPA2[3][0]) + " · " + groupPA2[3][1]);
 
+        // Prediction A - Row 3
         sbldr.replace(0, sbldr.length(), df.format(groupPA3[0]) + "%");
         ((TextView) this.toInflate.findViewById(predict_lastloss_percent_A1)).setText(sbldr.toString());
         sbldr.replace(0, sbldr.length(), df.format(groupPA3[1]) + "%");
@@ -114,17 +126,24 @@ public class PredictorFragment extends Fragment {
         sbldr.replace(0, sbldr.length(), df.format(groupPA3[3]) + "%");
         ((TextView) this.toInflate.findViewById(predict_lastloss_percent_A4)).setText(sbldr.toString());
 
-        ((TextView) this.toInflate.findViewById(predict_lastloss_A1)).setText(String.valueOf(groupPA2[0][0]) + " · " + groupPA2[0][1]);
-        ((TextView) this.toInflate.findViewById(predict_lastloss_A2)).setText(String.valueOf(groupPA2[1][0]) + " · " + groupPA2[1][1]);
-        ((TextView) this.toInflate.findViewById(predict_lastloss_A3)).setText(String.valueOf(groupPA2[2][0]) + " · " + groupPA2[2][1]);
-        ((TextView) this.toInflate.findViewById(predict_lastloss_A4)).setText(String.valueOf(groupPA2[3][0]) + " · " + groupPA2[3][1]);
 
+        /*
+        Random
+        */
 
+        // Random - Row 1
         ((TextView) this.toInflate.findViewById(predict_B1)).setText(String.valueOf(groupR1[0]));
         ((TextView) this.toInflate.findViewById(predict_B2)).setText(String.valueOf(groupR1[1]));
         ((TextView) this.toInflate.findViewById(predict_B3)).setText(String.valueOf(groupR1[2]));
         ((TextView) this.toInflate.findViewById(predict_B4)).setText(String.valueOf(groupR1[3]));
 
+        // Random - Row 2
+        ((TextView) this.toInflate.findViewById(predict_lastloss_B1)).setText(String.valueOf(groupR2[0][0]) + " · " + groupR2[0][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_B2)).setText(String.valueOf(groupR2[1][0]) + " · " + groupR2[1][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_B3)).setText(String.valueOf(groupR2[2][0]) + " · " + groupR2[2][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_B4)).setText(String.valueOf(groupR2[3][0]) + " · " + groupR2[3][1]);
+
+        // Random - Row 3
         sbldr.replace(0, sbldr.length(), df.format(groupR3[0]) + "%");
         ((TextView) this.toInflate.findViewById(predict_lastloss_percent_B1)).setText(sbldr.toString());
         sbldr.replace(0, sbldr.length(), df.format(groupR3[1]) + "%");
@@ -134,32 +153,31 @@ public class PredictorFragment extends Fragment {
         sbldr.replace(0, sbldr.length(), df.format(groupR3[3]) + "%");
         ((TextView) this.toInflate.findViewById(predict_lastloss_percent_B4)).setText(sbldr.toString());
 
-        ((TextView) this.toInflate.findViewById(predict_lastloss_B1)).setText(String.valueOf(groupR2[0][0]) + " · " + groupR2[0][1]);
-        ((TextView) this.toInflate.findViewById(predict_lastloss_B2)).setText(String.valueOf(groupR2[1][0]) + " · " + groupR2[1][1]);
-        ((TextView) this.toInflate.findViewById(predict_lastloss_B3)).setText(String.valueOf(groupR2[2][0]) + " · " + groupR2[2][1]);
-        ((TextView) this.toInflate.findViewById(predict_lastloss_B4)).setText(String.valueOf(groupR2[3][0]) + " · " + groupR2[3][1]);
+        /*
+        Prediction B
+        */
 
-
+        // Prediction B - Row 1
         ((TextView) this.toInflate.findViewById(predict_C1)).setText(String.valueOf(groupPB1[0]));
+        ((TextView) this.toInflate.findViewById(predict_C2)).setText(String.valueOf(groupPB1[1]));
+        ((TextView) this.toInflate.findViewById(predict_C3)).setText(String.valueOf(groupPB1[2]));
         ((TextView) this.toInflate.findViewById(predict_C4)).setText(String.valueOf(groupPB1[3]));
 
+        // Prediction B - Row 2
+        ((TextView) this.toInflate.findViewById(predict_lastloss_C1)).setText(String.valueOf(groupPB2[0][0]) + " · " + groupPB2[0][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_C2)).setText(String.valueOf(groupPB2[1][0]) + " · " + groupPB2[1][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_C3)).setText(String.valueOf(groupPB2[2][0]) + " · " + groupPB2[2][1]);
+        ((TextView) this.toInflate.findViewById(predict_lastloss_C4)).setText(String.valueOf(groupPB2[3][0]) + " · " + groupPB2[3][1]);
+
+        // Prediction B - Row 3
         sbldr.replace(0, sbldr.length(), df.format(groupPB3[0]) + "%");
         ((TextView) this.toInflate.findViewById(predict_lastloss_percent_C1)).setText(sbldr.toString());
+        sbldr.replace(0, sbldr.length(), df.format(groupPB3[1]) + "%");
+        ((TextView) this.toInflate.findViewById(predict_lastloss_percent_C2)).setText(sbldr.toString());
+        sbldr.replace(0, sbldr.length(), df.format(groupPB3[2]) + "%");
+        ((TextView) this.toInflate.findViewById(predict_lastloss_percent_C3)).setText(sbldr.toString());
         sbldr.replace(0, sbldr.length(), df.format(groupPB3[3]) + "%");
         ((TextView) this.toInflate.findViewById(predict_lastloss_percent_C4)).setText(sbldr.toString());
 
-        ((TextView) this.toInflate.findViewById(predict_lastloss_C1)).setText(String.valueOf(groupPB2[0][0]) + " · " + groupPB2[0][1]);
-        ((TextView) this.toInflate.findViewById(predict_lastloss_C4)).setText(String.valueOf(groupPB2[3][0]) + " · " + groupPB2[3][1]);
-
-        if (sd.getCount() >= 37) {
-            ((TextView) this.toInflate.findViewById(predict_C2)).setText(String.valueOf(groupPB1[1]));
-            ((TextView) this.toInflate.findViewById(predict_C3)).setText(String.valueOf(groupPB1[2]));
-            sbldr.replace(0, sbldr.length(), df.format(groupPB3[1]) + "%");
-            ((TextView) this.toInflate.findViewById(predict_lastloss_percent_C2)).setText(sbldr.toString());
-            sbldr.replace(0, sbldr.length(), df.format(groupPB3[2]) + "%");
-            ((TextView) this.toInflate.findViewById(predict_lastloss_percent_C3)).setText(sbldr.toString());
-            ((TextView) this.toInflate.findViewById(predict_lastloss_C2)).setText(String.valueOf(groupPB2[1][0]) + " · " + groupPB2[1][1]);
-            ((TextView) this.toInflate.findViewById(predict_lastloss_C3)).setText(String.valueOf(groupPB2[2][0]) + " · " + groupPB2[2][1]);
-        }
     }
 }
